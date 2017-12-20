@@ -9,6 +9,14 @@ fn order_to_user(){
     println!("Input your value I check!");
 }
 
+fn checker(value: u32){
+    match (value % 3, value % 5) {
+        (0, 0) => println!("FizzBuzz"),
+        (0, _) => println!("Fizz"),
+        (_, 0) => println!("Buzz"),
+        (_, _) => println!("{}",value),
+    }
+}
 
 fn main() {
     explain_app();
@@ -22,11 +30,7 @@ fn main() {
     // Covert string to Integer
     let _input: u32 = user_value.trim().parse().expect("Wrong value");
 
-    if _input % 3 == 0 {
-        println!("Fizz");
-    } else if _input % 5 == 0 {
-        println!("Buzz");
-    } else {
-        println!("{}", _input);
-    }
+    checker(_input);
 }
+
+
