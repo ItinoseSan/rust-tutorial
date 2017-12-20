@@ -2,7 +2,6 @@ use std::thread;
 use std::time::Duration;
 use std::sync::{Mutex, Arc};
 
-
 //　メンバー
 struct Member {
     name:String,
@@ -14,12 +13,13 @@ struct Table{
     forks: Vec<Mutex<()>>,
 }
 
-fn about_app(){
+fn about_app() {
     println!("This is eating process");
     println!("=====================");
 }
 
 impl Member{
+
     fn new(name: &str, left: usize, right: usize) -> Member{
         Member{
             name: name.to_string(),
